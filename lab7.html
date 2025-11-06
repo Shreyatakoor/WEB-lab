@@ -1,84 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>jQuery Script Tasks</title>
-    <title>jQuery Script Tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON and Data Manipulation</title>
     <p align="right">SHREYA TAKOOR</p>
     <p align="right">4MW23CS154</p>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        
-        p,
-        ul,
-        div {
-            margin: 10px 0;
-            padding: 10px;
-        }
-        
-        p,
-        ul li {
-            color: #333;
-        }
-        
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: #f4f4f4;
-        }
-    </style>
+    <link rel="stylesheet" href="lab7.css">
 </head>
-
 <body>
+    <h1>JSON and Data Manipulation</h1>
+    <section id="jsonToObject">
+        <h2>Convert JSON Text to JavaScript Object</h2>
+        <textarea id="jsonInput" placeholder="Enter JSON text here"></textarea>
+        <button onclick="convertJsonToObject()">convert to Object</button>
+        <pre id="objectOutput"></pre>
 
-    <h2>Append Content</h2>
-    <p id="para">This is an existing paragraph.</p>
-    <ul id="list">
-        <li>Item 1</li>
-        <li>Item 2</li>
-    </ul>
-    <button id="appendBtn">Append Content</button>
+    </section>
+    <section id="jsonToDate">
+        <h2>Convert JSON Date Text to JavaScript Date Object</h2>
+        <input type="text"id="dateInput" placeholder='{"date":"2023-10-01"}'>
+        <button onclick="convertJsonToDate()">Convert to Date</button>
+        <p id="dateOutput"></p>
 
-    <h2>Animate Element</h2>
+    </section>
+    <section id="jsonCsvConversion">
+    <h2>Convert JSON to CSV and CSV to JSON</h2>
+    <textarea id="jsonCsvInput" placeholder="Enter JSON for CSV conversion"></textarea>
+    <button onclick="convertJsonToCsv()">JSON to CSV </button>
+    <pre id="csvOutput"></pre>
+    <textarea id="csvToJsonInput" placeholder="Enter CSV for JSON conversion"></textarea>
+    <button onclick="convertCsvToJson()">CSV to JSON</button>
+    <pre id="jsonOutput"></pre>
 
-    <div class="box" id="animateBox"></div>
-    <button id="animateBtn">Animate Box</button>
+</section>
+<section id="hashString">
+    <h2>Create Hash from String</h2>
+    <input type="text" id="hashInput" placeholder="Enter text to hash">
+    <button onclick="createHash()">Generate Hash</button>
+    <p id="hashOutput"></p>
 
-    <script>
-        $(document).ready(function() {
-            let itemCount = $('#list li').length; // Initialize with the current number of
-            // items in the list
-
-            // Append content to paragraph and list with a unique item number
-            $('#appendBtn').click(() => {
-                itemCount++; // Increment the item number
-                $('#para').append(` Appended text ${itemCount}.`);
-                $('#list').append(`<li>Item ${itemCount}</li>`);
-            });
-        });
-
-        // Animate element and change color
-        $('#animateBtn').click(() => {
-            $('#animateBox').css({
-                    width: '100px',
-                    height: '100px',
-                    'background-color': '#f4f4f4'
-                }) // Reset properties
-                .animate({
-                    width: '150px',
-                    height: '150px'
-                }, 500, function() {
-                    $(this).css('background-color', 'lightblue');
-                });
-        });
-    </script>
+</section>
+<script src="7.js"></script>
+    
 </body>
-
 </html>
