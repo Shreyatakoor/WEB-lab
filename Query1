@@ -1,0 +1,5 @@
+show databases;
+create database students124;
+use students124;
+create table students124 (id int primary key, name varchar(50) , grade float);
+insert into students124 values (1,"abc", 99);
